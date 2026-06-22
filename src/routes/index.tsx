@@ -30,9 +30,8 @@ const TICKET_URL = "https://www.cofee.life/events/kerala-traders-carnival-2026--
 function LoadingScreen({ isLoading }: { isLoading: boolean }) {
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-all duration-[1200ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${
-        isLoading ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
-      }`}
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-background transition-all duration-[1200ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${isLoading ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
+        }`}
     >
       <div className="relative flex items-center justify-center">
         {/* Glowing background behind logo */}
@@ -49,18 +48,22 @@ function LoadingScreen({ isLoading }: { isLoading: boolean }) {
 function Nav() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        <a href="#top" className="transition-transform hover:scale-105">
-          <img src="/KTC Logo 1.svg" alt="Kerala Traders Carnival" className="h-8 md:h-10 w-auto" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
+        <a href="#top" className="transition-transform hover:scale-105 shrink-0 flex items-center">
+          <img src="/KTC Logo 1.svg" alt="Kerala Traders Carnival" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto" />
         </a>
-        <a
-          href={TICKET_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-lime text-deep px-6 py-2.5 text-sm font-bold hover:-translate-y-1 hover:scale-105 active:scale-95 transition-all shadow-[0_0_20px_-5px_var(--lime)]"
-        >
-          Book Tickets <ArrowRight className="h-4 w-4" />
-        </a>
+        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+          <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground/70 whitespace-nowrap leading-none mt-0.5">
+            Presented by
+          </span>
+          <a href="https://the5ers.com/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 flex items-center">
+            <img
+              src="/5ers logo.webp"
+              alt="The 5ers Logo"
+              className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain"
+            />
+          </a>
+        </div>
       </div>
     </header>
   );
@@ -101,7 +104,7 @@ function Hero() {
         </h1>
 
         <p data-aos="fade-left" data-aos-delay="100" className="mt-8 max-w-2xl text-xl md:text-2xl font-medium text-foreground/90 leading-tight">
-          Kerala's largest offline summit. 
+          Kerala's largest offline summit.
           Stop trading alone. <span className="text-lime font-bold">Connect, learn, and get funded.</span>
         </p>
 
@@ -243,7 +246,7 @@ function FinalCTA() {
       {/* background floating orbs */}
       <div aria-hidden className="pointer-events-none absolute top-10 left-10 h-64 w-64 rounded-full bg-blue/10 blur-3xl animate-float" />
       <div aria-hidden className="pointer-events-none absolute bottom-10 right-10 h-64 w-64 rounded-full bg-lime/10 blur-3xl animate-float-delayed" />
-      
+
       <div className="absolute inset-0 bg-lime/5" />
       <div data-aos="zoom-in" className="relative mx-auto max-w-3xl px-6 text-center">
         <div className="animate-float inline-block">
