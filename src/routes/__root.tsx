@@ -82,11 +82,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "KTC 2026 — Kerala Traders Carnival" },
       { property: "og:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "/og-img.jpg" },
+      { property: "og:image", content: "https://ktc-website-three.vercel.app/og-img.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "KTC 2026 — Kerala Traders Carnival" },
       { name: "twitter:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
-      { name: "twitter:image", content: "/og-img.jpg" },
+      { name: "twitter:image", content: "https://ktc-website-three.vercel.app/og-img.jpg" },
     ],
     links: [
       {
