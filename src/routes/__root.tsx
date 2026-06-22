@@ -10,7 +10,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -38,7 +37,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    // Custom error logging can be added here
   }, [error]);
 
   return (
@@ -77,16 +76,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "KTC 2026 — Kerala Traders Carnival" },
+      { name: "description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
+      { name: "author", content: "Marketable & The 5ers" },
+      { property: "og:title", content: "KTC 2026 — Kerala Traders Carnival" },
+      { property: "og:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { property: "og:image", content: "/og-img.jpg" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "KTC 2026 — Kerala Traders Carnival" },
+      { name: "twitter:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
+      { name: "twitter:image", content: "/og-img.jpg" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/KTC Logo 2.svg",
+      },
       {
         rel: "stylesheet",
         href: appCss,
