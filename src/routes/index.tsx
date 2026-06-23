@@ -39,7 +39,7 @@ function LoadingScreen({ isLoading }: { isLoading: boolean }) {
       <div className="relative flex items-center justify-center">
         {/* Glowing background behind logo */}
         <div className="absolute h-40 w-40 rounded-full bg-blue/20 blur-3xl animate-pulse-slow" />
-        <img src="/KTC Logo 1.svg" alt="Loading..." className="relative h-16 md:h-24 w-auto animate-float" />
+        <img src="/ktc-logo-1.svg" alt="Loading..." className="relative h-16 md:h-24 w-auto animate-float" />
       </div>
       <div className="mt-10 h-1 w-48 bg-border rounded-full overflow-hidden relative">
         <div className="absolute top-0 left-0 h-full bg-lime rounded-full animate-[loading_1.5s_ease-in-out_forwards]" />
@@ -53,7 +53,7 @@ function Nav() {
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/70 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-4 sm:py-5 lg:py-6 flex items-center justify-between">
         <a href="#top" className="transition-transform hover:scale-105 shrink-0 flex items-center">
-          <img src="/KTC Logo 1.svg" alt="Kerala Traders Carnival" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto" />
+          <img src="/ktc-logo-1.svg" alt="Kerala Traders Carnival" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto" />
         </a>
         <div className="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
           <span className="text-[10px] sm:text-xs md:text-sm font-medium text-foreground/70 whitespace-nowrap leading-none mt-0.5">
@@ -61,7 +61,7 @@ function Nav() {
           </span>
           <a href="https://the5ers.com/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-105 flex items-center">
             <img
-              src="/5ers logo.webp"
+              src="/5ers-logo.webp"
               alt="The 5ers Logo"
               className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain"
             />
