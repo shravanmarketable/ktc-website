@@ -167,7 +167,7 @@ function Marquee() {
     { text: "KERALA TRADERS CARNIVAL 2026", icon: Rocket },
     { text: "500 TRADERS", icon: Users },
     { text: "GET FUNDED", icon: Briefcase },
-    { text: "LIVE PAYOUTS", icon: TrendingUp },
+    { text: "GIVEAWAYS", icon: TrendingUp },
     { text: "MARKETABLE x THE 5ERS", icon: Zap }
   ];
 
