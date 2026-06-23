@@ -284,7 +284,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 flex flex-col items-center gap-6">
         <div className="flex flex-wrap justify-center items-center gap-6">
           <a href="https://www.instagram.com/keralatraderscarnival/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/50 hover:text-cyan transition-colors" aria-label="KTC Instagram">
-            <Instagram className="h-5 w-5" /> <span className="text-xs font-semibold tracking-wider uppercase">Carnival</span>
+            <Instagram className="h-5 w-5" /> <span className="text-xs font-semibold tracking-wider uppercase">KTC</span>
           </a>
           <a href="https://www.instagram.com/themarketable.in/?hl=en" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/50 hover:text-blue transition-colors" aria-label="Marketable Instagram">
             <Instagram className="h-5 w-5" /> <span className="text-xs font-semibold tracking-wider uppercase">Marketable</span>
