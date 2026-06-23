@@ -81,13 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Marketable & The 5ers" },
       { property: "og:title", content: "KTC 2026 — Kerala Traders Carnival" },
       { property: "og:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
-      { property: "og:url", content: "https://keralatraderscarnival.in" },
+      { property: "og:url", content: "https://keralatraderscarnival.com" },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://keralatraderscarnival.in/og-img.jpg" },
+      { property: "og:image", content: "https://keralatraderscarnival.com/og-img.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "KTC 2026 — Kerala Traders Carnival" },
       { name: "twitter:description", content: "Kerala's largest offline summit for traders. Connect, learn, and get funded." },
-      { name: "twitter:image", content: "https://keralatraderscarnival.in/og-img.jpg" },
+      { name: "twitter:image", content: "https://keralatraderscarnival.com/og-img.jpg" },
     ],
     links: [
       {
