@@ -10,7 +10,10 @@ import {
   Users,
   Briefcase,
   Zap,
-  Instagram
+  Instagram,
+  Banknote,
+  Gift,
+  Mic
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import AOS from "aos";
@@ -189,21 +192,21 @@ function Marquee() {
 function Hooks() {
   const hooks = [
     {
-      icon: Briefcase,
-      title: "Unlock $4M Capital",
-      desc: "Meet the 5ers prop firm team directly. Learn exactly how to clear challenges and trade institutional money risk-free.",
+      icon: Banknote,
+      title: "$10 Bonus For All Registrations",
+      desc: "Every participant receives a $10 trading bonus from our event partner. Start your trading journey with an extra edge.",
       color: "lime"
     },
     {
-      icon: Users,
-      title: "Network with 500+",
-      desc: "Connect with Kerala's top active traders, fund managers, and the Marketable community under one roof.",
+      icon: Gift,
+      title: "Funded Account Giveaways",
+      desc: "Win funded trading accounts, exclusive rewards, merchandise, and surprise giveaways throughout the event.",
       color: "blue"
     },
     {
-      icon: Zap,
-      title: "Real Strategies",
-      desc: "Expert panels on tax, compliance, wealth building, and trading technology. No fluff, just actionable insights.",
+      icon: Mic,
+      title: "20+ Speakers & Panel Discussions",
+      desc: "Learn from top traders, investors, tax experts, content creators, and industry leaders through keynote sessions and debates.",
       color: "cyan"
     }
   ];
