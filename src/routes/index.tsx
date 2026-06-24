@@ -13,11 +13,21 @@ import {
   Instagram,
   Banknote,
   Gift,
-  Mic
+  Mic,
+  MessageCircle
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import AutoScroll from "embla-carousel-auto-scroll";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -143,7 +153,7 @@ function Hero() {
           </a>
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="350" className="mt-10">
+        <div data-aos="fade-up" data-aos-delay="350" className="mt-10 flex flex-col md:flex-row flex-wrap items-center gap-4 md:gap-6">
           <a
             href={TICKET_URL}
             target="_blank"
@@ -153,7 +163,16 @@ function Hero() {
             Get Your Access Pass
             <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
           </a>
-          <p className="mt-4 text-sm text-foreground/50 md:ml-4 inline-block text-center md:text-left w-full md:w-auto">
+          <a
+            href="https://chat.whatsapp.com/GiIt7kB873l9lZm4sqZ32X?mode=gi_t"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group w-full md:w-auto inline-flex justify-center items-center gap-2 rounded-full bg-[#25D366] text-white px-8 py-4 text-lg font-bold shadow-[0_15px_50px_-12px_#25D366] hover:-translate-y-2 hover:scale-105 active:scale-95 transition-all"
+          >
+            Join WhatsApp Community
+            <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
+          </a>
+          <p className="text-sm text-foreground/50 w-full md:w-auto text-center md:text-left mt-2 md:mt-0">
             Limited to 500 seats. Selling fast.
           </p>
         </div>
@@ -238,6 +257,114 @@ function Hooks() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Speakers() {
+  const speakers = [
+    "Abhay-Rajkumar.jpg",
+    "Abhirami-Dayanandan.jpg",
+    "Ajo-Madakassery-.jpg",
+    "Ann-Mary-George-.jpg",
+    "Aparna-Premraj.jpg",
+    "Arun-Trade-Max.jpg",
+    "George-Kora.jpg",
+    "Guest-Poster---SAI-JAGAN.jpg",
+    "Guest-Poster--ATHUL-RAJ.jpg",
+    "Mirzad-Makhdoom.jpg",
+    "Nandhu-Anil.jpg",
+    "Nithin-Jhon.jpg",
+    "Rahul-Rajeev-K.jpg",
+    "Sameer-Gogna.jpg",
+    "Sibi-Mathew-Alex.jpg",
+    "sunil-Ibgarm.jpg"
+  ];
+  const autoScrollPlugin = useRef(
+    AutoScroll({ speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+  const wheelPlugin = useRef(WheelGesturesPlugin());
+
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <section
+      id="speakers"
+      className="py-16 md:py-24 bg-background relative overflow-hidden group"
+      onMouseMove={handleMouseMove}
+    >
+      {/* Interactive Spotlight */}
+      <div
+        className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+        style={{
+          background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34, 211, 238, 0.08), transparent 40%)`
+        }}
+      />
+
+      {/* Animated Floating Background Elements */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-lime/10 blur-[120px] rounded-full animate-pulse-slow mix-blend-screen" />
+        <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-blue/10 blur-[150px] rounded-full animate-pulse-slow mix-blend-screen" style={{ animationDelay: "2s" }} />
+
+        {/* Animated Grid */}
+        <div
+          className="absolute inset-0 opacity-[0.04] animate-grid-pan"
+          style={{
+            backgroundImage: "linear-gradient(var(--cyan) 1px, transparent 1px), linear-gradient(90deg, var(--cyan) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            maskImage: "radial-gradient(ellipse at center, black 10%, transparent 80%)",
+          }}
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 data-aos="zoom-in" className="font-black tracking-tight text-3xl md:text-5xl">
+            Meet Our <span className="text-lime">Speakers</span>
+          </h2>
+          <p data-aos="fade-up" className="mt-4 text-lg text-foreground/70">
+            Learn from top minds in trading, business, content creation etc
+          </p>
+        </div>
+
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[autoScrollPlugin.current, wheelPlugin.current]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4 md:-ml-6">
+            {speakers.map((img, i) => (
+              <CarouselItem key={i} className="pl-4 md:pl-6 basis-[70%] sm:basis-1/2 md:basis-1/3">
+                <div
+                  className="relative overflow-hidden rounded-2xl border border-border bg-card/40 transition-all duration-300"
+                >
+                  <img
+                    src={`/speaker/${img}`}
+                    alt="Speaker"
+                    className="w-full h-auto object-cover select-none"
+                    draggable={false}
+                    loading="lazy"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+            <CarouselPrevious className="-left-12 border-border bg-card hover:bg-card/80 transition-colors" />
+            <CarouselNext className="-right-12 border-border bg-card hover:bg-card/80 transition-colors" />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
@@ -331,6 +458,7 @@ function Landing() {
       <Hero />
       <Marquee />
       <Hooks />
+      <Speakers />
       <FinalCTA />
       <Footer />
     </div>
