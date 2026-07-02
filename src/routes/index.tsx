@@ -283,7 +283,9 @@ function Speakers() {
     "Subin-SB.jpg",
     "Anila-Rajeev.jpg",
     "Abinas-Murthulla.jpg",
-    "Fouzb.jpg"
+    "Fouzb.jpg",
+    "Ali-Suhail.jpg",
+    "DINRAG-KAVUNGAL.jpg"
   ];
   const autoScrollPlugin = useRef(
     AutoScroll({ speed: 1.5, stopOnInteraction: false, stopOnMouseEnter: true })
